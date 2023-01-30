@@ -1,0 +1,125 @@
+:root {
+    --dev-border-style: solid black;
+    --header-text-color: rgb(226, 214, 198);
+    --main-background-color: rgb(12, 32, 92);
+    --footer-height: 9rem;
+    --accent-color: #e99274;
+    --max-width: 838px;
+}
+
+/*= General Styling
+* Applies general base styles to the site.
+*/
+
+#header-text h1, #header-text h3 {
+    width: 100%;
+}
+
+/* Main Header Styles are included in header.css */
+
+/*= Main Content Styles
+*
+*/
+
+main {
+    flex: 1;
+    align-items: center;
+}
+
+main article {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+
+    margin: 10px 0px;
+    max-width: var(--max-width);
+}
+
+article h3 {
+    color: var(--main-background-color);
+    padding: 5px;
+}
+
+.project-display {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: var(--max-width);
+    height: auto;
+    z-index: 10;
+}
+
+#about-me p {
+    margin: 5px;
+    line-height: 1.3;
+}
+
+.image-container {
+    position: relative;
+    height: 500px;
+    width: auto;
+
+    max-width: var(--max-width);
+    overflow-y: scroll;    
+    overflow-x: hidden;
+}
+
+#horiseon-refactor-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: calc(1.2 * var(--max-width));
+}
+
+.tooltip {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: fit-content;
+    max-width: var(--max-width);
+
+    box-sizing: border-box;
+    padding: 5px;
+    border: solid 5px var(--main-background-color);
+    color: var(--main-background-color);
+    background-color: var(--header-text-color);
+
+    visibility: hidden;
+}
+
+.project-screenshot {
+    max-width: 100%;
+    height: auto;
+}
+
+#horiseon-refactor, #horiseon-refactor-screenshot {
+    width: 100%;
+    max-width: calc(1.2 * var(--max-width));
+}
+
+.project-description {
+    margin-top: 5px;
+    padding: 5px;
+    border: solid 2px var(--main-background-color);
+}
+
+.project-description p {
+    margin-bottom: 5px;
+}
+
+#horiseon-refactor:hover span {
+    visibility: visible;
+}
+
+#placeholder-container {
+    text-transform: capitalize;
+}
+
+#placeholder:hover span {
+    visibility: visible;
+}

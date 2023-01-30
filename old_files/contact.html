@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact James Perry</title>
+    <link rel="stylesheet" href="./assets/css/reset.css"/>
+    <link rel="stylesheet" href="./assets/css/header-footer.css"/>
+    <link rel="stylesheet" href="./assets/css/contact-style.css"/>
+</head>
+<body>
+    <header>
+        <section id="profile-photo">
+            <a href="./index.html">
+                <img src="./assets/images/profile-picture.jpg" alt="James Perry on his wedding day."/>
+            </a>
+        </section>
+        <section id="right-header-container">
+            <section id="about-me-header">
+                <div id="header-text">
+                    <h1>James Perry</h1>
+                    <h3>Web Dev | Software Engineering | App Design</h3>
+                </div>
+                <div id ="social-media">
+                    <a href="https://github.com/pbp66">github</a>
+                    <a href="https://www.linkedin.com/in/james-perry-b7b135224/">linkedIn</a>
+                    <a href="https://www.facebook.com/james.perry.96343">facebook</a>
+                    <a href="https://dev.to/pbp66">dev.to</a>
+                </div>
+            </section>
+            <nav>
+                <a href="././index.html#about-me">about me</a>
+                <a href="./index.html#portfolio">portfolio</a>
+                <a href="./contact.html">contact me</a>
+            </nav>
+        </section>
+    </header>
+    <main>
+        <form>
+            <section id="contact-info">
+                <label for="fullname">
+                    <h3>Your Name:</h3>
+                    <input type="text" id="fullname" name="fullname" required>
+                </label>
+                <label for="phone-number">
+                    <h3>Phone Number:</h3>
+                    <input type="tel" id="phone-number" name="phone-number">
+                </label>
+                <label for="email-address">
+                    <h3>Email Address:</h3>
+                    <input type="email" id="email-address" name="email-address" required>
+                </label>
+            </section>
+            <label for="reason" id="reason">
+                <h3>Thanks for contacting me! What interest has brought you to my site?</h3>
+                <label for="reason">
+                    <input type="radio" name="reason" id="career-opportunity" required>
+                    <p>Career Opportunity</p>
+                </label>
+                <label for="reason">
+                    <input type="radio" name="reason" id="freelance-web-development">
+                    <p>Freelance Web Development</p>
+                </label>
+                <label for="reason">
+                    <input type="radio" name="reason" id="get-in-touch">
+                    <p>Get in Touch</p>
+                </label>
+                <label for="reason">
+                    <input type="radio" name="reason" id="other">
+                    <p>Other</p>
+                </label>
+            </label>
+            <label for="comment-box">
+                <h3>Additional Comments:</h3>
+                <textarea id="comment-box" name="comment-box" placeholder="Please enter comments here."></textarea>
+            </label>
+            <section id="buttons">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </section>
+        </form>
+    </main>
+    <div id="footer-container">
+        <footer>
+            <p>
+                &copy 2022 James Perry
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

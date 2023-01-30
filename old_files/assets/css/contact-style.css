@@ -1,0 +1,169 @@
+:root {
+    --dev-border-style: solid black;
+    --header-text-color: rgb(226, 214, 198);
+    --main-background-color: rgb(12, 32, 92);
+    --footer-height: 9rem;
+    --accent-color: #e99274;
+}
+
+main {
+    flex: 1;
+}
+
+main form {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    color: var(--main-background-color);
+}
+
+form {
+    margin: 15px;
+    max-width: 838px;
+}
+
+form label, form input  {
+    margin: 5px;
+}
+
+input, textarea {
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+#contact-info {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: flex-start;
+    width: 100%;
+}
+
+#contact-info label {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-items: stretch;
+}
+
+#contact-info input {  
+    font-size: 1.5rem;
+    border-radius: 10px;
+}
+
+#phone-number {
+    flex: none;
+    width: 10.5rem;
+}
+
+#reason {
+    display: flex;
+    flex-flow: column;
+    margin: 20px 0px;
+}
+
+#reason label {
+    padding: 0px 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#reason h3 {
+    word-wrap: break-word;
+    margin-bottom: 10px;
+}
+
+#reason label p {
+    padding: 0px 15px;
+}
+
+label[for="comment-box"] {
+    display: flex;
+    flex-flow: column;
+}
+
+#comment-box {
+    min-height: 200px;
+    min-width: 700px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+}
+
+#buttons {
+    display: inline;
+}
+
+#buttons input {
+    border-radius: 10px;
+    border: transparent;
+    padding: 15px;
+    margin: 5px;
+
+    font-size: 1.2rem;
+    color: var(--header-text-color);
+    background-color: var(--main-background-color);
+}
+
+input:focus, textarea:focus {
+    border: 2px solid var(--accent-color);
+}
+
+#buttons input:hover {
+    background-color: var(--accent-color);
+    color: black;
+}
+
+/*= Media Queries
+* For large and small smartphones
+*/
+
+@media screen and (max-width: 768px), screen and (max-width: 576px) {
+    main *{
+        align-items: center;
+    }
+
+    main form {
+        align-items: stretch;
+    }
+
+    #contact-info {
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    #phone-number {
+        align-self: flex-start;
+        flex: none;
+        width: 10.5rem;
+    }
+
+    #reason {
+        align-items: flex-start;
+    }
+
+    #reason h3 {
+        text-align: center;
+    }
+
+    #comment-box {
+        align-items: center;
+        width: 90vw;
+        min-width: 250px;
+    }
+
+    label[for="comment-box"] h3 {
+        align-self: flex-start;
+    }
+
+    #buttons {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+    }
+
+    #buttons input {
+        margin: 15px;
+    }
+}

@@ -1,0 +1,244 @@
+:root {
+    --dev-border-style: solid black;
+    --header-text-color: rgb(226, 214, 198);
+    --main-background-color: rgb(12, 32, 92);
+    --footer-height: 9rem;
+    --accent-color: #e99274;
+}
+
+/*= Header Styles
+* Header is comprised of several sub flex boxes to distribute the elements
+* The top layer is split into two boxes: profile picture and the content on the right.
+* The right flex box contains two more flex boxes: Nav Bar and About Me information
+* The About Me information contains the last two flex boxes: about me content and external links pertaining to my career and interests.
+*/
+
+header, footer {
+    display: flex;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background-color: var(--main-background-color);
+    color: var(--header-text-color);
+}
+
+header {
+    justify-content: center;
+}
+
+header a {
+    color: var(--header-text-color);
+    text-decoration: none;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+ a:hover {
+    color: var(--accent-color);
+}
+
+/*= Profile Photo Styles
+* #profile-photo styles apply to the container for the image
+* #profile-phot img styles apply to the image itself
+* The before pseudo elements creates a flex box that grow to keep the header content centered in the page regardless of browser window size. Works in conjunction with #right-header-container::after.
+*/
+
+#profile-photo::before {
+    flex-grow:1;
+}
+
+#profile-photo {
+    margin: 10px 10px 10px 0px;
+    overflow: hidden;
+    border-radius: 50px;
+    border: solid 3px;
+    width: 150px;
+    height: 150px;
+    flex: none;
+    justify-content: flex-end;
+}
+
+#profile-photo:hover {
+    border: solid 3px var(--accent-color);
+}
+
+#profile-photo img {
+    width: 180px;
+    height: 180px;
+    object-position: -10px -15px;
+}
+
+/*= Right Header Container
+* Contains two flex boxes to style the nav bar and the about me content.
+* The after pseudo elements creates a flex box that grow to keep the header content centered in the page regardless of browser window size. Works in conjunction with #profile-photo::before.
+*/
+
+/* #right-header-container::before {
+flex-grow: 1;
+} */
+
+#right-header-container {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: stretch;
+}
+
+#right-header-container::after {
+    flex-grow: 1;
+}
+
+/*= About Me Header
+* This container separates the social media links and the brief about me section
+*/
+
+#about-me-header {
+    display: flex;
+    flex-flow: wrap;
+}
+
+#header-text {
+/* margin-top: 35px; */
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    padding: 0px 10px 5px 10px;
+    justify-content: flex-end;
+}
+
+#header-text h3 {
+    margin-top: 10px;
+}
+
+#social-media {
+    display: flex;
+    padding: 5px;
+    flex-wrap: wrap;
+    text-transform: uppercase;
+    width: fit-content;
+}
+
+/*= Nav Bar
+* The nav bar contains links to other html sites: about me, featured, portfolio, and a form to contact me.
+*/
+
+nav {
+    text-transform:uppercase;
+    font-size: 17px;
+    margin-bottom: 2px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    height: fit-content;
+    width: 100%;
+    align-self: flex-end;
+    flex: 1;
+}
+
+nav a, #social-media a {
+    padding: 10px 5px 10px 5px;
+    display: inline-block;
+    height: fit-content;
+}
+
+main {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+}
+
+/*= Footer Content Styles
+*
+*/
+
+footer {
+    background-image: linear-gradient(var(--header-text-color),var(--main-background-color));
+    
+    margin: 0px;
+    height: var(--footer-height);
+
+    position: sticky;
+    bottom: 0;
+
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/*= Media Queries
+* For large and small smartphones
+*/
+
+@media screen and (max-width: 768px), screen and (max-width: 576px) {
+    * {
+        align-items: center;
+        align-content: center;
+    }
+
+    header {   
+        flex-flow: column wrap;
+        flex: 1;
+        width: 100%;
+    }
+
+    #profile-photo {
+        /* TODO: Make picture and nav bar relative to each other. All element should move down if the nav bar wraps itself. I may need to make another media query if the nav bar reaches a certain pixel width*/
+        position: relative;
+        top: 27px;
+        flex-flow: column wrap;
+        margin: 0px;
+        margin-top: 10px;
+    }
+
+    #right-header-container {
+        position: relative;
+        top: 40px;
+        flex-flow: column wrap;
+    }
+
+    #about-me-header {
+        flex-flow: column wrap;
+        height: fit-content;
+    }
+
+    #header-text {
+        position: relative;
+        flex-flow: column wrap;
+        text-align: center;
+        top: -45px;
+    }
+
+    #social-media {
+        position: relative;
+        top: -50px;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-self: center;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+
+        flex-flow: row;
+        justify-content: space-around;
+        align-self: center;
+        background-color: var(--main-background-color);
+    }
+
+    #slide-show, #about-me-video {
+        height: 40vh;
+        width: 90vw;
+    }
+
+    #about-me-video video {
+        width: 90vw;
+    }
+
+    #footer-container {
+        width: 100%;
+    }
+}
