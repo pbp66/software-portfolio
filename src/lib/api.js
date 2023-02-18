@@ -30,7 +30,7 @@ class API {
 	}
 
 	updateURLPath(...paths) {
-		paths.forEach((path) => (this.url.pathname += path));
+		paths.forEach((path) => (this.url.pathname += `/${path}`));
 	}
 
 	resetURL() {
