@@ -3,6 +3,7 @@ import AboutMe from "../src/pages/aboutMe";
 import Featured from "../src/pages/featured";
 import Portfolio from "../src/pages/portfolio";
 import Vault from "../src/pages/vault";
+import ContactMe from "../src/pages/contactMe";
 import Header from "../src/components/header.js";
 import Footer from "../src/components/footer.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -35,11 +36,11 @@ function App() {
 							path="/vault"
 							component={Vault}
 						/>
-						{/* <Route
+						<Route
 							exact
 							path="/contactme"
 							component={ContactMe}
-						/> */}
+						/>
 					</Routes>
 					<Footer />
 				</main>
