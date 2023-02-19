@@ -1,7 +1,8 @@
-import "./App.css";
+import React from "react";
+import AboutMe from "../src/pages/aboutMe/index.js";
 
 function App() {
-	return null;
+	return <AboutMe />;
 }
 
 export default App;
