@@ -1,5 +1,6 @@
 import React from "react";
-import AboutMe from "../src/pages/aboutMe/index.js";
+import AboutMe from "../src/pages/aboutMe";
+import Featured from "../src/pages/featured";
 import Header from "../src/components/header.js";
 import Footer from "../src/components/footer.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -20,9 +21,8 @@ function App() {
 						<Route
 							exact
 							path="/featured"
-							component={AboutMe}
+							component={Featured}
 						/>
-						{/* <Featured /> */}
 						{/* <Portfolio /> */}
 						{/* <ContactMe /> */}
 						{/* <Vault /> */}
