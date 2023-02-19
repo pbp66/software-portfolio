@@ -5,13 +5,11 @@ import Footer from "../src/components/footer.js";
 
 function App() {
 	return (
-		<>
-			<main>
-				<Header />
-				<AboutMe />
-				<Footer />
-			</main>
-		</>
+		<main>
+			<Header />
+			<AboutMe />
+			<Footer />
+		</main>
 	);
 }
 
