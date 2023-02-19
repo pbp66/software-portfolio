@@ -19,27 +19,27 @@ function App() {
 						<Route
 							exact
 							path="/"
-							component={AboutMe}
+							element={<AboutMe />}
 						/>
 						<Route
 							exact
 							path="/featured"
-							component={Featured}
+							element={<Featured />}
 						/>
 						<Route
 							exact
 							path="/portfolio"
-							component={Portfolio}
+							element={<Portfolio />}
 						/>
 						<Route
 							exact
 							path="/vault"
-							component={Vault}
+							element={<Vault />}
 						/>
 						<Route
 							exact
 							path="/contactme"
-							component={ContactMe}
+							element={<ContactMe />}
 						/>
 					</Routes>
 					<Footer />

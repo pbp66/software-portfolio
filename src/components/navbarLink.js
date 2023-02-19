@@ -40,4 +40,5 @@ const NavbarLink = styled(Link)`
 }
 `;
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default (props) => <NavbarLink {...props} />;
