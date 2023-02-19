@@ -1,6 +1,7 @@
 import React from "react";
 import AboutMe from "../src/pages/aboutMe";
 import Featured from "../src/pages/featured";
+import Portfolio from "../src/pages/portfolio";
 import Header from "../src/components/header.js";
 import Footer from "../src/components/footer.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
