@@ -1,3 +1,5 @@
+import TypeDef from "./TypeDef";
+
 export default class GraphQLDefs {
 	#types = [];
 	#queries = [];
