@@ -1,44 +1,24 @@
 {
-	"name": "20-react-portfolio",
-	"version": "0.1.0",
-	"private": true,
-	"dependencies": {
-		"@testing-library/jest-dom": "^5.16.4",
-		"@testing-library/react": "^11.1.0",
-		"@testing-library/user-event": "^13.5.0",
-		"axios": "^1.2.6",
-		"bootstrap": "^5.2.3",
-		"dotenv": "^16.0.3",
-		"react": "17.0.2",
-		"react-bootstrap": "^2.7.2",
-		"react-dom": "17.0.2",
-		"react-router-dom": "^6.8.1",
-		"react-scripts": "5.0.1",
-		"styled-components": "^5.3.6",
-		"web-vitals": "^2.1.4"
-	},
+	"name": "09-software-portfolio",
+	"version": "1.0.0",
+	"description": "Software Portfolio",
+	"main": "server/server.js",
+	"type": "module",
 	"scripts": {
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject"
+		"start": "node --experimental-modules --es-module-specifier-resolution=node server/server.js",
+		"develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+		"install": "cd server && npm i && cd ../client && npm i",
+		"build": "cd client && npm run build"
 	},
-	"eslintConfig": {
-		"extends": [
-			"react-app",
-			"react-app/jest"
-		]
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/pbp66/software-portfolio.git"
 	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	}
+	"keywords": [],
+	"author": "pbp66",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/pbp66/software-portfolio/issues"
+	},
+	"homepage": "https://github.com/pbp66/software-portfolio#readme"
 }
