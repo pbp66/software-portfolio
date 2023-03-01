@@ -55,8 +55,6 @@ No Tests Provided
 ## Questions/Issues
 
 Repo owner: [pbp66](https://github.com/pbp66).
-For any questions, you may contact pbp66 via email: pbp66.coding@gmail.com. Please format your email using the following template:
+For any questions, you may contact pbp66 via email: pbp66.coding@gmail.com.
 
--   Subject: Repository - Question/Issue
--   Body: Summarize the issue with a brief description for the first paragraph. Additional paragraphs can be used for a long description, if needed. Include any errors when using this project
--   Signature: Please leave an email address so that any updates are sent get back to you.
+TODO: Generate Issue Template or Provide Instructions on how to create GitHub Issue
