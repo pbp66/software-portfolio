@@ -1,12 +1,15 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+	"name": "software-portfolio-server",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.js",
+	"type": "module",
+	"scripts": {
+		"start": "node --experimental-modules --es-module-specifier-resolution=node server.js",
+		"seed": "node --experimental-modules --es-module-specifier-resolution=node seeds/seed.js",
+		"watch": "npx nodemon server.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
 }
