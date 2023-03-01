@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { DateTime } from "luxon";
-import { getUUID, emailRegex, phoneNumberRegex } from "../utils";
+import { getUUID, getDate, emailRegex, phoneNumberRegex } from "../utils";
 const Schema = mongoose.Schema;
 
 const inquirySchema = new Schema(
@@ -50,6 +50,7 @@ const inquirySchema = new Schema(
 	{
 		toJSON: {
 			virtuals: true,
+			getters: true,
 		},
 		id: false,
 	}

@@ -22,5 +22,10 @@
 		"luxon": "^3.2.1",
 		"mongoose": "^7.0.0",
 		"uuid": "^9.0.0"
+	},
+	"nodemonConfig": {
+		"execMap": {
+			"js": "node --experimental-modules --es-module-specifier-resolution=node"
+		}
 	}
 }

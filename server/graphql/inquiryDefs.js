@@ -1,6 +1,4 @@
-import gql from "@apollo/server";
-
-const inquiryDefs = gql`
+const inquiryDefs = `
 	type Inquiry {
 		_id: ID!
 		first_name: String!

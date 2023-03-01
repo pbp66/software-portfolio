@@ -1,6 +1,4 @@
-import gql from "@apollo/server";
-
-const userDefs = gql`
+const userDefs = `
 	type User {
 		_id: ID!
 		username: String!
@@ -13,6 +11,14 @@ const userDefs = gql`
 	type Auth {
 		token: String!
 		user: User
+	}
+
+	type Query {
+		me: User
+	}
+
+	type Mutation {
+		login(email: String!, password: String!): Auth
 	}
 `;
 

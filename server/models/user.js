@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 import { DateTime } from "luxon";
-import { getUUID, getDate, emailRegex } from "..utils/";
+import { getUUID, getDate, emailRegex } from "../utils";
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
@@ -51,6 +51,7 @@ const userSchema = new Schema(
 	{
 		toJSON: {
 			virtuals: true,
+			getters: true,
 		},
 		id: false,
 	}
