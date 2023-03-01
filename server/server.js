@@ -2,8 +2,8 @@ import express from "express";
 import { ApolloServer } from "@apollo/server";
 import { expressMiddleware } from "@apollo/server/express4";
 import db from "./config/connection";
-import typeDefs from "./graphql";
-import resolvers from "./controllers";
+import { typeDefs } from "./graphql";
+import { resolvers } from "./controllers";
 import { authMiddleware } from "./utils/auth";
 
 const app = express();
