@@ -1,4 +1,3 @@
-import TypeDef from "./TypeDef";
-import GraphQLDefs from "./GraphQLDefs";
+import GraphQLSchema from "./GraphQLDefs";
 
-export { TypeDef, GraphQLDefs };
+export { GraphQLSchema };
