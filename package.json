@@ -25,5 +25,7 @@
 	"devDependencies": {
 		"concurrently": "^7.6.0"
 	},
-	"dependencies": {}
+	"dependencies": {
+		"mongodb": "^6.3.0"
+	}
 }
