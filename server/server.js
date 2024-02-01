@@ -1,10 +1,10 @@
 import express from "express";
 import { ApolloServer } from "@apollo/server";
 import { expressMiddleware } from "@apollo/server/express4";
-import db from "./config/connection";
-import { typeDefs } from "./graphql";
-import { resolvers } from "./controllers";
-import { authMiddleware } from "./utils/auth";
+import db from "./config/connection.js";
+import { typeDefs } from "./graphql/index.js";
+import { resolvers } from "./controllers/index.js";
+import { authMiddleware } from "./utils/auth.js";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -19,6 +19,7 @@ app.use(express.json());
 // if we're in production, serve client/build as static assets
 // To use with ES6, changed path.join to using URL objects:
 // https://stackoverflow.com/questions/46745014/alternative-for-dirname-in-node-js-when-using-es6-modules
+console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV === "production") {
 	app.use(
 		express.static(new URL("../client/build", import.meta.url).pathname)

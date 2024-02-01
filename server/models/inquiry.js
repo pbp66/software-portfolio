@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 import { DateTime } from "luxon";
-import { getUUID, getDate, emailRegex, phoneNumberRegex } from "../utils";
+import {
+	getUUID,
+	getDate,
+	emailRegex,
+	phoneNumberRegex,
+} from "../utils/index.js";
 const Schema = mongoose.Schema;
 
 const inquirySchema = new Schema(

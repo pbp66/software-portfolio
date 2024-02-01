@@ -1,5 +1,5 @@
-import userDefs from "./userDefs";
-import inquiryDefs from "./inquiryDefs";
+import userDefs from "./userDefs.js";
+import inquiryDefs from "./inquiryDefs.js";
 
 const typeDefs = userDefs;
 
