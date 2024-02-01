@@ -3,6 +3,8 @@
 
 # production
 /build
+/tmp
+/temp
 
 # environment
 .DS_Store
