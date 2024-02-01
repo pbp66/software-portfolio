@@ -20,6 +20,7 @@
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
+		"deploy": "rm -rf ../../../jpperry.dev/* && cp -a build/. ../../../jpperry.dev/",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
 	},
