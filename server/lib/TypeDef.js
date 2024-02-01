@@ -12,6 +12,8 @@
  */
 
 import Property from "./Property.js";
+import Query from "./Query.js";
+import Mutation from "./Mutation.js";
 
 export default class TypeDef {
 	#stringLiteral;
@@ -24,6 +26,8 @@ export default class TypeDef {
 
 	#extractSchema(typeDefString) {
 		this.properties = [];
+		this.queries = [];
+		this.mutations = [];
 		// Separating the typeDef into indiviual groups by splitting at the left brace.
 		// Index 0 will always contain the type of schema (type, input, etc) and its name
 		const splitSchema = typeDefString.trim().split("{");
@@ -35,13 +39,24 @@ export default class TypeDef {
 			.trim()
 			.split("\n");
 
-		if (this.schemaName === "Query" || this.schemaName === "Mutation") {
-			// TODO: Implement
-			this.properties = properties;
-		} else {
-			for (let i = 0; i < properties.length; i++) {
+		for (let i = 0; i < properties.length; i++) {
+			if (this.schemaName === "Query") {
+				this.queries.push(new Query(properties[i]));
+			} else if (this.schemaName === "Mutation") {
+				this.mutations.push(new Mutation(properties[i]));
+			} else {
 				this.properties.push(new Property(properties[i]));
 			}
+		}
+
+		if (this.properties.length === 0) {
+			this.properties = null;
+		}
+		if (this.queries.length === 0) {
+			this.queries = null;
+		}
+		if (this.mutations.length === 0) {
+			this.mutations = null;
 		}
 	}
 }

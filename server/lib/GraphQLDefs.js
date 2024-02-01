@@ -17,6 +17,9 @@ export default class GraphQLSchema {
 		console.log(this.schemas);
 	}
 
+	static addGraphQLSchemas(...schemas) {
+		
+	}
 	// getTypeDefs() {}
 
 	// addTypeDef(typeDef) {}
@@ -27,6 +30,14 @@ export default class GraphQLSchema {
 const userDefs = `
 	type User {
 		_id: ID!
+		username: String!
+		first_name: String!
+		last_name: String!
+		email: String!
+		password: String!
+	}
+
+	input userInput {
 		username: String!
 		first_name: String!
 		last_name: String!
@@ -45,6 +56,7 @@ const userDefs = `
 
 	type Mutation {
 		login(email: String!, password: String!): Auth
+		addUser(userInput!): User
 	}
 `;
 
