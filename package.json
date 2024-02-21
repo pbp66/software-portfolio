@@ -5,8 +5,8 @@
 	"main": "server/server.js",
 	"type": "module",
 	"scripts": {
-		"remote-start": "NODE_ENV=production node server/server.js",
-		"local-start": "NODE_ENV=production node server/server.js",
+		"start": "npm run build && npm run quick-start",
+		"quick-start": "cd server && npm run start",
 		"develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
 		"install": "cd server && npm i && cd ../client && npm i",
 		"build": "cd client && npm run build"

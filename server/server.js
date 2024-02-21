@@ -27,20 +27,12 @@ app.use(express.json());
 // if we're in production, serve client/build as static assets
 // To use with ES6, changed path.join to using URL objects:
 // https://stackoverflow.com/questions/46745014/alternative-for-dirname-in-node-js-when-using-es6-modules
-console.log("Node Environment: ", process.env.NODE_ENV);
+console.log("\nNode Environment: ", process.env.NODE_ENV, "\n");
 if (process.env.NODE_ENV === "production") {
 	app.use(
 		express.static(new URL("../client/build", import.meta.url).pathname)
 	);
 }
-console.log(
-	"Static File Path: ",
-	new URL("../client/build/static", import.meta.url).pathname
-);
-console.log(
-	"File to Send Path: ",
-	new URL("../client/build/index.html", import.meta.url).pathname
-);
 app.get("/", (req, res) => {
 	// res.sendFile("index.html", {
 	// 	root: path.resolve(__dirname, "../client/build/"),
