@@ -1,9 +1,20 @@
-import userDefs from "./userDefs.js";
-import inquiryDefs from "./inquiryDefs.js";
+import path from "node:path";
+import fs from "node:fs";
+import gql from "graphql-tag";
 
-const typeDefs = userDefs;
+const userSchema = fs.readFileSync(
+	path.resolve(process.cwd(), "server/graphql", "user.graphql")
+);
+const inquirySchema = fs.readFileSync(
+	path.resolve(process.cwd(), "server/graphql", "inquiry.graphql")
+);
 
-export { typeDefs };
+const typeDefs = gql`
+	${userSchema}
+	${inquirySchema}
+`;
+
+export default typeDefs;
 
 /**
  * TODO: create schema definition for github repos, featured, portfolio, vault, resume

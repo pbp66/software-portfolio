@@ -24,6 +24,5 @@
 	"homepage": "https://github.com/pbp66/software-portfolio#readme",
 	"devDependencies": {
 		"concurrently": "^7.6.0"
-	},
-	"dependencies": {}
+	}
 }
