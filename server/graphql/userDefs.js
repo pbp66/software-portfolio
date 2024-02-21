@@ -1,4 +1,4 @@
-const userDefs = `
+giconst userDefs = `
 	type User {
 		_id: ID!
 		username: String!
