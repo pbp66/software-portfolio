@@ -1,8 +1,8 @@
 import Property from "./Property.js";
 
-export default class Mutation {
-	constructor(mutationString) {
-		const components = mutationString.match(/[a-zA-Z]+!?/g);
+export default class Query {
+	constructor(queryString) {
+		const components = queryString.match(/[a-zA-Z]+!?/g);
 		this.name = components[0];
 		this.returnType = components[components.length - 1];
 		this.inputs = [];

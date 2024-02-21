@@ -1,41 +1,63 @@
-import TypeDef from "./TypeDef";
+import TypeDef from "./TypeDef.js";
 
-export default class GraphQLDefs {
-	#types = [];
+export default class GraphQLSchema {
+	#objectTypes = [];
 	#queries = [];
 	#mutations = [];
 	#inputs = [];
-	constructor(typeDefs = []) {
-		if (typeDefs.length > 0) {
-			this.#sortTypeDefs(typeDefs);
-		}
+	#scalars = [];
+	#interfaces = [];
+	#unions = [];
+	#typeDefRegex = /[a-z]{4,5}\s[a-zA-z]+\s\{[a-zA-Z),(_!:\s]+\}/g;
+	constructor(gqlString) {
+		this.schemas = [];
+		const typeDefs = gqlString.match(this.#typeDefRegex);
+		typeDefs.forEach((typeDef) => this.schemas.push(new TypeDef(typeDef)));
+
+		console.log(this.schemas);
 	}
 
-	getTypeDefs() {}
-
-	addTypeDef(typeDef) {}
-
-	removeTypeDef() {}
-
-	#sortTypeDefs(typeDefs) {
-		typeDefs.forEach((typeDef) => {
-			switch (typeDef.type) {
-				case "type":
-					this.#types.push(typeDef);
-					break;
-				case "query":
-					this.#queries.push(typeDef);
-					break;
-				case "mutation":
-					this.#mutations.push(typeDef);
-					break;
-				case "input":
-					this.#inputs.push(typeDef);
-					break;
-				default:
-					// Default Case?
-					console.log("Default");
-			}
-		});
+	static addGraphQLSchemas(...schemas) {
+		
 	}
+	// getTypeDefs() {}
+
+	// addTypeDef(typeDef) {}
+
+	// removeTypeDef() {}
 }
+
+const userDefs = `
+	type User {
+		_id: ID!
+		username: String!
+		first_name: String!
+		last_name: String!
+		email: String!
+		password: String!
+	}
+
+	input userInput {
+		username: String!
+		first_name: String!
+		last_name: String!
+		email: String!
+		password: String!
+	}
+
+	type Auth {
+		token: String!
+		user: User
+	}
+
+	type Query {
+		me: User
+	}
+
+	type Mutation {
+		login(email: String!, password: String!): Auth
+		addUser(userInput!): User
+	}
+`;
+
+new GraphQLSchema(userDefs);
