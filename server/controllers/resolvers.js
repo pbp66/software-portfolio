@@ -1,6 +1,6 @@
 import { GraphQLError } from "graphql";
-import { User, Inquiry } from "../models/index";
-import { signToken } from "../utils/auth";
+import { User, Inquiry } from "../models/index.js";
+import { signToken } from "../utils/auth.js";
 
 const resolvers = {
 	Query: {

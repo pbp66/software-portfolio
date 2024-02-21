@@ -1,7 +1,10 @@
-import { signToken, authMiddleware } from "./auth";
-import { getUUID } from "./uuid";
-import { getDate, getISODate } from "./luxon";
-import { email as emailRegex, phoneNumber as phoneNumberRegex } from "./regex";
+import { signToken, authMiddleware } from "./auth.js";
+import { getUUID } from "./uuid.js";
+import { getDate, getISODate } from "./luxon.js";
+import {
+	email as emailRegex,
+	phoneNumber as phoneNumberRegex,
+} from "./regex.js";
 
 export {
 	getUUID,

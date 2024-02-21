@@ -1,4 +1,4 @@
-import User from "./user";
-import Inquiry from "./inquiry";
+import User from "./user.js";
+import Inquiry from "./inquiry.js";
 
 export { User, Inquiry };
