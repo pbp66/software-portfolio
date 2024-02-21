@@ -2,11 +2,13 @@ import path from "node:path";
 import fs from "node:fs";
 import gql from "graphql-tag";
 
+console.log(process.cwd());
+
 const userSchema = fs.readFileSync(
-	path.resolve(process.cwd(), "server/graphql", "user.graphql")
+	path.resolve(process.cwd(), "./server/graphql", "user.graphql")
 );
 const inquirySchema = fs.readFileSync(
-	path.resolve(process.cwd(), "server/graphql", "inquiry.graphql")
+	path.resolve(process.cwd(), "./server/graphql", "inquiry.graphql")
 );
 
 const typeDefs = gql`

@@ -1,10 +1,18 @@
 import express from "express";
+import path from "node:path";
+import mime from "mime";
 import { ApolloServer } from "@apollo/server";
 import { expressMiddleware } from "@apollo/server/express4";
 import db from "./config/connection.js";
 import typeDefs from "./graphql/graphql.js";
 import { resolvers } from "./controllers/index.js";
 import { authMiddleware } from "./utils/auth.js";
+
+//TODO: Remove and Improve the below lines of code
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -19,14 +27,25 @@ app.use(express.json());
 // if we're in production, serve client/build as static assets
 // To use with ES6, changed path.join to using URL objects:
 // https://stackoverflow.com/questions/46745014/alternative-for-dirname-in-node-js-when-using-es6-modules
-console.log(process.env.NODE_ENV);
+console.log("Node Environment: ", process.env.NODE_ENV);
 if (process.env.NODE_ENV === "production") {
 	app.use(
 		express.static(new URL("../client/build", import.meta.url).pathname)
 	);
 }
-
+console.log(
+	"Static File Path: ",
+	new URL("../client/build/static", import.meta.url).pathname
+);
+console.log(
+	"File to Send Path: ",
+	new URL("../client/build/index.html", import.meta.url).pathname
+);
 app.get("/", (req, res) => {
+	// res.sendFile("index.html", {
+	// 	root: path.resolve(__dirname, "../client/build/"),
+	// });
+	//res.setHeader("Content-Type", mime.getType("js"));
 	res.sendFile(
 		new URL("../client/build/index.html", import.meta.url).pathname
 	);
