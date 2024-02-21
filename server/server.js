@@ -7,6 +7,7 @@ import db from "./config/connection.js";
 import typeDefs from "./graphql/graphql.js";
 import { resolvers } from "./controllers/index.js";
 import { authMiddleware } from "./utils/auth.js";
+import routes from "./routes/routes.js";
 
 //TODO: Remove and Improve the below lines of code
 import { fileURLToPath } from "url";
@@ -23,6 +24,7 @@ const server = new ApolloServer({
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(routes);
 
 // if we're in production, serve client/build as static assets
 // To use with ES6, changed path.join to using URL objects:
