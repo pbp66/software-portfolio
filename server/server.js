@@ -1,10 +1,10 @@
 import express from "express";
 import { ApolloServer } from "@apollo/server";
 import { expressMiddleware } from "@apollo/server/express4";
-import db from "./config/connection";
-import { typeDefs } from "./graphql";
-import { resolvers } from "./controllers";
-import { authMiddleware } from "./utils/auth";
+import db from "./config/connection.js";
+import { typeDefs } from "./graphql/index.js";
+import { resolvers } from "./controllers/index.js";
+import { authMiddleware } from "./utils/auth.js";
 
 const app = express();
 const PORT = process.env.PORT || 3001;
