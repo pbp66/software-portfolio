@@ -28,11 +28,7 @@ if (process.env.NODE_ENV === "production") {
 	app.use(
 		express.static(path.join(serverRoot, appRoot, "client/build/static/"))
 	);
-	// app.use(
-	// 	express.static(
-	// 		"home/pbp66/jpperry.dev/software-portfolio/client/build/"
-	// 	)
-	// );
+	app.use(express.static(path.join(serverRoot, appRoot, "client/build/")));
 }
 
 app.get(process.env.URI_PATH || "/", (req, res) => {
