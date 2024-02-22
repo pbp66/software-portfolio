@@ -33,9 +33,7 @@ if (process.env.NODE_ENV === "production") {
 	app.use(
 		express.static(
 			new URL(
-				require("url")
-					.pathToFileURL("../server/client/build")
-					.toString()
+				require("url").pathToFileURL(process.env.BUILD_PATH).toString()
 			).pathname
 		)
 	);
@@ -47,7 +45,9 @@ app.get(process.env.URI_PATH || "/", (req, res) => {
 	res.sendFile(
 		new URL(
 			require("url")
-				.pathToFileURL("../client/build/index.html")
+				.pathToFileURL(
+					path.resolve(process.env.BUILD_PATH, "index.html")
+				)
 				.toString()
 		).pathname
 	);
