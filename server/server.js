@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.get(process.env.URI_PATH || "/", (req, res) => {
-	res.type("js");
+	res.type("html");
 	res.sendFile("software-portfolio/client/build/index.html", {
 		root: "/home/pbp66/jpperry.dev/",
 	});
