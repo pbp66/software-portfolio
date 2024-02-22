@@ -37,7 +37,7 @@ if (process.env.NODE_ENV === "production") {
 
 app.get(process.env.URI_PATH || "/", (req, res) => {
 	//res.type("js");
-	res.sendFile(appRoot, "client/build/index.html", {
+	res.sendFile(path.join(appRoot, "client/build/index.html"), {
 		root: "/home/pbp66/",
 	});
 });
