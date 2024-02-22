@@ -43,13 +43,8 @@ console.log(process.env.URI_PATH || "/");
 app.get(process.env.URI_PATH || "/", (req, res) => {
 	//res.sendFile(new URL("../client/build/index.html", dirname).pathname);
 	res.sendFile(
-		new URL(
-			require("url")
-				.pathToFileURL(
-					path.resolve(process.env.BUILD_PATH, "index.html")
-				)
-				.toString()
-		).pathname
+		new URL(require("url").pathToFileURL(process.env.HOME_PAGE).toString())
+			.pathname
 	);
 });
 

@@ -3,13 +3,13 @@
 	"version": "1.0.0",
 	"description": "Software Portfolio",
 	"main": "server/server.js",
-	"type": "module",
 	"scripts": {
 		"start": "npm run build && npm run quick-start",
 		"quick-start": "cd server && npm run start",
 		"develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
 		"install": "cd server && npm i && cd ../client && npm i",
-		"build": "cd client && npm run build"
+		"build": "cd client && npm run build",
+		"setup": "npm run install && npm run build"
 	},
 	"repository": {
 		"type": "git",
