@@ -1,6 +1,6 @@
-import { GraphQLError } from "graphql";
-import { User, Inquiry } from "../models/index.js";
-import { signToken } from "../utils/auth.js";
+const { GraphQLError } = require("graphql");
+const { User, Inquiry } = require("../models/index.js");
+const { signToken } = require("../utils/auth.js");
 
 function throwUnauthenticatedError() {
 	throw new GraphQLError("User is not authenticated", {
@@ -52,4 +52,4 @@ const resolvers = {
 	},
 };
 
-export default resolvers;
+module.exports = resolvers;

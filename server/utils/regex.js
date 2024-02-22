@@ -8,7 +8,7 @@
  * [a-zA-Z]{2,} -  the top-level domain can only contain 2 or more alpha characters (lowercase and uppercase alphabet characters)
  */
 
-export const email = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/;
+const email = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/;
 
 /**
  * Must trim whitespace before submitting
@@ -33,4 +33,6 @@ export const email = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/;
  * ###########
  * ### #######
  */
-export const phoneNumber = /^\(?[\d]{3}\)?[\s.-]?[\d]{3}[\s.-]?[\d]{4}$/;
+const phoneNumber = /^\(?[\d]{3}\)?[\s.-]?[\d]{3}[\s.-]?[\d]{4}$/;
+
+module.exports = { email, phoneNumber };

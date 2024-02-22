@@ -1,6 +1,5 @@
-import dotenv from "dotenv";
-dotenv.config();
-import jwt from "jsonwebtoken";
+require("dotenv").config();
+const jwt = require("jsonwebtoken");
 
 // TODO: Refactor as my own work and for improved performance/functionality!
 
@@ -8,13 +7,13 @@ import jwt from "jsonwebtoken";
 const secret = process.env.SERVER_SECRET;
 const expiration = "2h";
 
-export function signToken({ username, email, _id }) {
+function signToken({ username, email, _id }) {
 	const payload = { username, email, _id };
 	return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
 }
 
 // function for our authenticated routes
-export function authMiddleware({ req, res }) {
+function authMiddleware({ req, res }) {
 	// allows token to be sent via body, query, or header
 	let token = req.body.token || req.query.token || req.headers.authorization;
 	// ["Bearer", "<tokenvalue>"]
@@ -35,3 +34,5 @@ export function authMiddleware({ req, res }) {
 		console.error("Invalid token", err);
 	}
 }
+
+module.exports = { signToken, authMiddleware };

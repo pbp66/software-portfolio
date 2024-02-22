@@ -1,5 +1,5 @@
-import express from "express";
-const router = new express.Router();
+const router = require("express").Router();
+// const router = new express.Router();
 
 router.get("/", async (req, res) => {
 	try {
@@ -13,4 +13,4 @@ router.get("/", async (req, res) => {
 	}
 });
 
-export default router;
+module.exports = router;

@@ -1,4 +1,4 @@
-export default class Property {
+class Property {
 	constructor(propertyString) {
 		[this.key, this.value] = propertyString
 			.trim()
@@ -13,3 +13,5 @@ export default class Property {
 		}
 	}
 }
+
+module.exports = Property;

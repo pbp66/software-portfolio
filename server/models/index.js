@@ -1,4 +1,4 @@
-import User from "./user.js";
-import Inquiry from "./inquiry.js";
+const User = require("./user.js");
+const Inquiry = require("./inquiry.js");
 
-export { User, Inquiry };
+module.exports = { User, Inquiry };

@@ -1,14 +1,10 @@
-import path from "node:path";
-import fs from "node:fs";
-import gql from "graphql-tag";
+const path = require("path");
+const fs = require("fs");
+const gql = require("graphql-tag");
 
-console.log(process.cwd());
-
-const userSchema = fs.readFileSync(
-	path.resolve(process.cwd(), "./graphql", "user.graphql")
-);
+const userSchema = fs.readFileSync(path.resolve(__dirname, "user.graphql"));
 const inquirySchema = fs.readFileSync(
-	path.resolve(process.cwd(), "./graphql", "inquiry.graphql")
+	path.resolve(__dirname, "inquiry.graphql")
 );
 
 const typeDefs = gql`
@@ -16,7 +12,7 @@ const typeDefs = gql`
 	${inquirySchema}
 `;
 
-export default typeDefs;
+module.exports = typeDefs;
 
 /**
  * TODO: create schema definition for github repos, featured, portfolio, vault, resume

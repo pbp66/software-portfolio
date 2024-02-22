@@ -1,13 +1,13 @@
-import mongoose from "mongoose";
-import { DateTime } from "luxon";
-import {
+const mongoose = require("mongoose");
+const { DateTime } = require("luxon");
+const {
 	getUUID,
 	getDate,
 	emailRegex,
 	phoneNumberRegex,
-} from "../utils/index.js";
-const Schema = mongoose.Schema;
+} = require("../utils/index.js");
 
+const Schema = mongoose.Schema;
 const inquirySchema = new Schema(
 	{
 		uuid: {
@@ -66,4 +66,4 @@ inquirySchema.virtual("fullName").get(function () {
 });
 
 const Inquiry = mongoose.model("Inquiry", inquirySchema);
-export default Inquiry;
+exports.default = Inquiry;

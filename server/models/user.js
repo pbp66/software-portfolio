@@ -1,8 +1,7 @@
-import mongoose from "mongoose";
-// import bcrypt from "bcrypt";
-import bcrypt from "bcryptjs";
-import { DateTime } from "luxon";
-import { getUUID, getDate, emailRegex } from "../utils/index.js";
+const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
+const { DateTime } = require("luxon");
+const { getUUID, getDate, emailRegex } = require("../utils/index.js");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
@@ -90,4 +89,4 @@ userSchema.pre("updateOne", function (next) {
 });
 
 const User = mongoose.model("User", userSchema);
-export default User;
+exports.default = User;

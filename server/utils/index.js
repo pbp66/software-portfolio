@@ -1,12 +1,12 @@
-import { signToken, authMiddleware } from "./auth.js";
-import { getUUID } from "./uuid.js";
-import { getDate, getISODate } from "./luxon.js";
-import {
-	email as emailRegex,
-	phoneNumber as phoneNumberRegex,
-} from "./regex.js";
+const { signToken, authMiddleware } = require("./auth.js");
+const { getUUID } = require("./uuid.js");
+const { getDate, getISODate } = require("./luxon.js");
+const {
+	email: emailRegex,
+	phoneNumber: phoneNumberRegex,
+} = require("./regex.js");
 
-export {
+module.exports = {
 	getUUID,
 	signToken,
 	authMiddleware,

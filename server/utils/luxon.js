@@ -1,9 +1,11 @@
-import { DateTime } from "luxon";
+const { DateTime } = require("luxon");
 
-export function getDate(date) {
+function getDate(date) {
 	return DateTime.fromJSDate(date).toFormat("MM/dd/yyyy hh:mm a");
 }
 
-export function getISODate(date) {
+function getISODate(date) {
 	return date;
 }
+
+module.exports = { getDate, getISODate };

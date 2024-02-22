@@ -1,6 +1,6 @@
-import Property from "./Property.js";
+const Property = require("./Property.js");
 
-export default class Query {
+class Query {
 	constructor(queryString) {
 		const components = queryString.match(/[a-zA-Z]+!?/g);
 		this.name = components[0];
@@ -13,3 +13,5 @@ export default class Query {
 		}
 	}
 }
+
+module.exports = Query;

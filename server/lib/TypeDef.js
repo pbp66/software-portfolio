@@ -11,11 +11,11 @@
  *
  */
 
-import Property from "./Property.js";
-import Query from "./Query.js";
-import Mutation from "./Mutation.js";
+const Property = require("./Property.js");
+const Query = require("./Query.js");
+const Mutation = require("./Mutation.js");
 
-export default class TypeDef {
+class TypeDef {
 	#stringLiteral;
 	constructor(typeDef) {
 		// Assigned in this.#extractSchema method
@@ -60,3 +60,5 @@ export default class TypeDef {
 		}
 	}
 }
+
+module.exports = TypeDef;

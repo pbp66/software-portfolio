@@ -1,4 +1,5 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
+//require("dotenv").config();
 
 const connectionString =
 	process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/software-portfolio";
@@ -8,4 +9,4 @@ mongoose.connect(connectionString, {
 	useUnifiedTopology: true,
 });
 
-export default mongoose.connection;
+module.exports = mongoose.connection;

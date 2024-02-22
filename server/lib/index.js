@@ -1,3 +1,3 @@
-import GraphQLSchema from "./GraphQLDefs";
+const GraphQLSchema = require("./GraphQLDefs");
 
-export { GraphQLSchema };
+module.exports = GraphQLSchema;

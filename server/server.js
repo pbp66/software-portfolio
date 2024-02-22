@@ -1,19 +1,14 @@
-import express from "express";
-import path from "node:path";
-import mime from "mime";
-import { ApolloServer } from "@apollo/server";
-import { expressMiddleware } from "@apollo/server/express4";
-import db from "./config/connection.js";
-import typeDefs from "./graphql/graphql.js";
-import { resolvers } from "./controllers/index.js";
-import { authMiddleware } from "./utils/auth.js";
-import routes from "./routes/routes.js";
+const express = require("express");
+const path = require("path");
+const { ApolloServer } = require("@apollo/server");
+const { expressMiddleware } = require("@apollo/server/express4");
+const url = require("url");
 
-//TODO: Remove and Improve the below lines of code
-import { fileURLToPath } from "url";
-import { dirname } from "path";
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const db = require("./config/connection.js");
+const typeDefs = require("./graphql/graphql.js");
+const { resolvers } = require("./controllers/index.js");
+const { authMiddleware } = require("./utils/auth.js");
+const routes = require("./routes/routes.js");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -24,25 +19,18 @@ const server = new ApolloServer({
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(routes);
+app.use("/", routes);
 
 // if we're in production, serve client/build as static assets
 // To use with ES6, changed path.join to using URL objects:
 // https://stackoverflow.com/questions/46745014/alternative-for-dirname-in-node-js-when-using-es6-modules
 console.log("\nNode Environment: ", process.env.NODE_ENV, "\n");
 if (process.env.NODE_ENV === "production") {
-	app.use(
-		express.static(new URL("../client/build", import.meta.url).pathname)
-	);
+	app.use(express.static(new URL("../client/build", __dirname).pathname));
 }
-app.get("/", (req, res) => {
-	// res.sendFile("index.html", {
-	// 	root: path.resolve(__dirname, "../client/build/"),
-	// });
-	//res.setHeader("Content-Type", mime.getType("js"));
-	res.sendFile(
-		new URL("../client/build/index.html", import.meta.url).pathname
-	);
+
+app.get(process.env.URI_PATH || "/", (req, res) => {
+	res.sendFile(new URL("../client/build/index.html", __dirname).pathname);
 });
 
 const startApolloServer = () => {

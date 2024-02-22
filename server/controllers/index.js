@@ -1,3 +1,3 @@
-import resolvers from "./resolvers.js";
+const resolvers = require("./resolvers.js");
 
-export { resolvers };
+module.exports = resolvers;

@@ -1,6 +1,5 @@
-import TypeDef from "./TypeDef.js";
-
-export default class GraphQLSchema {
+const TypeDef = require("./TypeDef.js");
+class GraphQLSchema {
 	#objectTypes = [];
 	#queries = [];
 	#mutations = [];
@@ -17,9 +16,7 @@ export default class GraphQLSchema {
 		console.log(this.schemas);
 	}
 
-	static addGraphQLSchemas(...schemas) {
-		
-	}
+	static addGraphQLSchemas(...schemas) {}
 	// getTypeDefs() {}
 
 	// addTypeDef(typeDef) {}
@@ -61,3 +58,5 @@ const userDefs = `
 `;
 
 new GraphQLSchema(userDefs);
+
+module.exports = GraphQLSchema;
