@@ -29,22 +29,24 @@ app.use("/", routes);
 // https://stackoverflow.com/questions/46745014/alternative-for-dirname-in-node-js-when-using-es6-modules
 console.log("\nNode Environment: ", process.env.NODE_ENV, "\n");
 if (process.env.NODE_ENV === "production") {
-	//app.use(express.static(new URL("../client/build", dirname).pathname));
 	app.use(
-		express.static(
-			new URL(
-				require("url").pathToFileURL(process.env.BUILD_PATH).toString()
-			).pathname
-		)
+		"/",
+		express.static(url.pathToFileURL("../client/build/").toString())
 	);
+	// app.use(
+	// 	express.static(
+	// 		new URL(
+	// 			require("url").pathToFileURL(process.env.BUILD_PATH).toString()
+	// 		).pathname
+	// 	)
+	// );
 }
 
-console.log(process.env.URI_PATH || "/");
 app.get(process.env.URI_PATH || "/", (req, res) => {
 	//res.sendFile(new URL("../client/build/index.html", dirname).pathname);
 	res.sendFile(
-		new URL(require("url").pathToFileURL(process.env.HOME_PAGE).toString())
-			.pathname
+		//new URL(require("url").pathToFileURL(process.env.HOME_PAGE).toString())
+		url.pathToFileURL("../client/build/index.html").toString()
 	);
 });
 
