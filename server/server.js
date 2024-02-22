@@ -32,8 +32,11 @@ if (process.env.NODE_ENV === "production") {
 	//app.use(express.static(new URL("../client/build", dirname).pathname));
 	app.use(
 		express.static(
-			new URL(require("url").pathToFileURL("../client/build").toString())
-				.pathname
+			new URL(
+				require("url")
+					.pathToFileURL("../server/client/build")
+					.toString()
+			).pathname
 		)
 	);
 }
