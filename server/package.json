@@ -22,7 +22,6 @@
 		"graphql-tag": "^2.12.6",
 		"jsonwebtoken": "^9.0.0",
 		"luxon": "^3.2.1",
-		"mime": "^4.0.1",
 		"mongodb": "^6.3.0",
 		"mongoose": "^7.0.0",
 		"uuid": "^9.0.0"
