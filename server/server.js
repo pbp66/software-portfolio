@@ -41,6 +41,7 @@ if (process.env.NODE_ENV === "production") {
 	);
 }
 
+console.log(process.env.URI_PATH || "/");
 app.get(process.env.URI_PATH || "/", (req, res) => {
 	//res.sendFile(new URL("../client/build/index.html", dirname).pathname);
 	res.sendFile(

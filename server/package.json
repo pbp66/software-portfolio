@@ -8,7 +8,7 @@
 		"dev-start": "NODE_ENV=production node server.js",
 		"seed": "node db/seed.js",
 		"watch": "npx nodemon server.js",
-		"setup": "cd .. && npm run install && npm run build && cd server"
+		"setup": "cd .. && npm run setup"
 	},
 	"keywords": [],
 	"author": "pbp66",
