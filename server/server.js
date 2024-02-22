@@ -35,7 +35,7 @@ if (process.env.NODE_ENV === "production") {
 			new URL(
 				new URL(
 					require("url").pathToFileURL("../client/build").toString()
-				)
+				).pathname
 			)
 		)
 	);
@@ -48,7 +48,7 @@ app.get(process.env.URI_PATH || "/", (req, res) => {
 			require("url")
 				.pathToFileURL("../client/build/index.html")
 				.toString()
-		)
+		).pathname
 	);
 });
 
