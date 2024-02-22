@@ -21,14 +21,18 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/", routes);
 
-const options = { root: process.env.ROOT_DIR };
 if (process.env.NODE_ENV === "production") {
-	console.log(path.resolve(options.root, "../client/build"));
-	app.use("/", express.static(path.resolve(options.root, "../client/build")));
+	console.log("home/pbp66/jpperry.dev/software-portfolio/client/build");
+	app.use(
+		"/",
+		express.static("home/pbp66/jpperry.dev/software-portfolio/client/build")
+	);
 }
 
 app.get(process.env.URI_PATH || "/", (req, res) => {
-	res.sendFile("../client/build/index.html", options);
+	res.sendFile(
+		"home/pbp66/jpperry.dev/software-portfolio/client/build/index.html"
+	);
 });
 
 const startApolloServer = () => {
