@@ -27,14 +27,10 @@ app.use("/", routes);
 // if we're in production, serve client/build as static assets
 // To use with ES6, changed path.join to using URL objects:
 // https://stackoverflow.com/questions/46745014/alternative-for-dirname-in-node-js-when-using-es6-modules
-console.log("\nNode Environment: ", process.env.NODE_ENV, "\n");
+//console.log("\nNode Environment: ", process.env.NODE_ENV, "\n");
+const options = { root: process.env.ROOT_DIR };
 if (process.env.NODE_ENV === "production") {
-	app.use(
-		"/",
-		express.static(
-			url.pathToFileURL(path.resolve("../client/build/")).toString()
-		)
-	);
+	app.use("/", express.static(path.resolve(options.root, "../client/build")));
 	// app.use(
 	// 	express.static(
 	// 		new URL(
@@ -45,7 +41,6 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.get(process.env.URI_PATH || "/", (req, res) => {
-	const options = { root: process.env.ROOT_DIR };
 	//res.sendFile(new URL("../client/build/index.html", dirname).pathname);
 	res.sendFile(
 		//new URL(require("url").pathToFileURL(process.env.HOME_PAGE).toString())
