@@ -22,11 +22,16 @@ app.use(express.json());
 app.use("/", routes);
 
 if (process.env.NODE_ENV === "production") {
-	console.log("home/pbp66/jpperry.dev/software-portfolio/client/build");
 	app.use(
-		"/",
-		express.static("home/pbp66/jpperry.dev/software-portfolio/client/build")
+		express.static(
+			"home/pbp66/jpperry.dev/software-portfolio/client/build/static"
+		)
 	);
+	// app.use(
+	// 	express.static(
+	// 		"home/pbp66/jpperry.dev/software-portfolio/client/build/"
+	// 	)
+	// );
 }
 
 app.get(process.env.URI_PATH || "/", (req, res) => {
