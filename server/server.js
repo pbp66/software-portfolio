@@ -30,10 +30,9 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.get(process.env.URI_PATH || "/", (req, res) => {
-	res.sendFile(
-		"home/pbp66/jpperry.dev/software-portfolio/client/build/index.html",
-		{ root: "/home/pbp66/jpperry.dev/" }
-	);
+	res.sendFile("software-portfolio/client/build/index.html", {
+		root: "/home/pbp66/jpperry.dev/",
+	});
 });
 
 const startApolloServer = () => {
