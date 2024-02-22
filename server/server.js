@@ -18,6 +18,7 @@ const server = new ApolloServer({
 });
 
 const dirname = process.env.DIRECTORY || __dirname;
+console.log(dirname);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
