@@ -1,9 +1,5 @@
-import React from "react";
+//import React from "react";
 
 export default function Featured(props) {
-	return (
-		<>
-			<div>Featured</div>
-		</>
-	);
+	return <>Welcome to my personal website! Content to be updated soon!</>;
 }

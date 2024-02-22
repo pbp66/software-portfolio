@@ -19,10 +19,11 @@ export default function Navigation(props) {
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="navbar-nav">
 						<Nav className="me-auto">
-							<NavbarLink to="/">About Me</NavbarLink>
-							<NavbarLink to="/featured">Featured</NavbarLink>
+							<NavbarLink to="/">Featured</NavbarLink>
+							<NavbarLink to="/aboutMe">About Me</NavbarLink>
+							<NavbarLink to="/blog">Blog</NavbarLink>
 							<NavbarLink to="/portfolio">Portfolio</NavbarLink>
-							<NavbarLink to="/contactme">Contact Me</NavbarLink>
+							<NavbarLink to="/contactMe">Contact Me</NavbarLink>
 							<NavbarLink to="/vault">Vault</NavbarLink>
 						</Nav>
 					</Navbar.Collapse>

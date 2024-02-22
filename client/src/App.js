@@ -7,7 +7,7 @@ import Vault from "../src/pages/vault";
 import ContactMe from "../src/pages/contactMe";
 import Header from "../src/components/header.js";
 import Footer from "../src/components/footer.js";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 
 function App() {
 	return (
@@ -16,39 +16,31 @@ function App() {
 				<main>
 					<Header />
 					<Routes>
-						{" "}
 						<Route
-							exact
 							path="/"
 							element={<Featured />}
 						/>
 						<Route
-							exact
-							path="/AboutMe"
+							path="/aboutMe"
 							element={<AboutMe />}
 						/>
 						<Route
-							exact
 							path="/blog"
 							element={<Blog />}
 						/>
 						<Route
-							exact
 							path="/portfolio"
 							element={<Portfolio />}
 						/>
 						<Route
-							exact
 							path="/vault"
 							element={<Vault />}
 						/>
 						<Route
-							exact
-							path="/contactme"
+							path="/contactMe"
 							element={<ContactMe />}
 						/>
 					</Routes>
-					Test Test Testing
 					<Footer />
 				</main>
 			</BrowserRouter>
