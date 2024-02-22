@@ -31,7 +31,9 @@ console.log("\nNode Environment: ", process.env.NODE_ENV, "\n");
 if (process.env.NODE_ENV === "production") {
 	app.use(
 		"/",
-		express.static(url.pathToFileURL("../client/build/").toString())
+		express.static(
+			url.pathToFileURL(path.resolve("../client/build/")).toString()
+		)
 	);
 	// app.use(
 	// 	express.static(
@@ -43,11 +45,11 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.get(process.env.URI_PATH || "/", (req, res) => {
-	console.log(req);
+	const options = { root: process.env.ROOT_DIR };
 	//res.sendFile(new URL("../client/build/index.html", dirname).pathname);
 	res.sendFile(
 		//new URL(require("url").pathToFileURL(process.env.HOME_PAGE).toString())
-		url.pathToFileURL("../client/build/index.html").toString()
+		url.pathToFileURL(path.resolve("../client/build/index.html")).toString()
 	);
 });
 
