@@ -17,8 +17,8 @@ const server = new ApolloServer({
 	resolvers,
 });
 
-const dirname = process.env.DIRECTORY || __dirname;
-console.log(dirname);
+// const dirname = process.env.DIRECTORY || __dirname;
+// console.log(dirname);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -29,11 +29,27 @@ app.use("/", routes);
 // https://stackoverflow.com/questions/46745014/alternative-for-dirname-in-node-js-when-using-es6-modules
 console.log("\nNode Environment: ", process.env.NODE_ENV, "\n");
 if (process.env.NODE_ENV === "production") {
-	app.use(express.static(new URL("../client/build", dirname).pathname));
+	//app.use(express.static(new URL("../client/build", dirname).pathname));
+	app.use(
+		express.static(
+			new URL(
+				new URL(
+					require("url").pathToFileURL("../client/build").toString()
+				)
+			)
+		)
+	);
 }
 
 app.get(process.env.URI_PATH || "/", (req, res) => {
-	res.sendFile(new URL("../client/build/index.html", dirname).pathname);
+	//res.sendFile(new URL("../client/build/index.html", dirname).pathname);
+	res.sendFile(
+		new URL(
+			require("url")
+				.pathToFileURL("../client/build/index.html")
+				.toString()
+		)
+	);
 });
 
 const startApolloServer = () => {
