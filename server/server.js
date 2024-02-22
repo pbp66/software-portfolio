@@ -17,36 +17,18 @@ const server = new ApolloServer({
 	resolvers,
 });
 
-// const dirname = process.env.DIRECTORY || __dirname;
-// console.log(dirname);
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/", routes);
 
-// if we're in production, serve client/build as static assets
-// To use with ES6, changed path.join to using URL objects:
-// https://stackoverflow.com/questions/46745014/alternative-for-dirname-in-node-js-when-using-es6-modules
-//console.log("\nNode Environment: ", process.env.NODE_ENV, "\n");
 const options = { root: process.env.ROOT_DIR };
 if (process.env.NODE_ENV === "production") {
+	console.log(path.resolve(options.root, "../client/build"));
 	app.use("/", express.static(path.resolve(options.root, "../client/build")));
-	// app.use(
-	// 	express.static(
-	// 		new URL(
-	// 			require("url").pathToFileURL(process.env.BUILD_PATH).toString()
-	// 		).pathname
-	// 	)
-	// );
 }
 
 app.get(process.env.URI_PATH || "/", (req, res) => {
-	//res.sendFile(new URL("../client/build/index.html", dirname).pathname);
-	res.sendFile(
-		//new URL(require("url").pathToFileURL(process.env.HOME_PAGE).toString())
-		"client/build/index.html",
-		options
-	);
+	res.sendFile("../client/build/index.html", options);
 });
 
 const startApolloServer = () => {
