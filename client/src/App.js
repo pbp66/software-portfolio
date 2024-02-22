@@ -1,6 +1,7 @@
 import React from "react";
 import AboutMe from "../src/pages/aboutMe";
 import Featured from "../src/pages/featured";
+import Blog from "../src/pages/blog";
 import Portfolio from "../src/pages/portfolio";
 import Vault from "../src/pages/vault";
 import ContactMe from "../src/pages/contactMe";
@@ -19,12 +20,17 @@ function App() {
 						<Route
 							exact
 							path="/"
+							element={<Featured />}
+						/>
+						<Route
+							exact
+							path="/AboutMe"
 							element={<AboutMe />}
 						/>
 						<Route
 							exact
-							path="/featured"
-							element={<Featured />}
+							path="/blog"
+							element={<Blog />}
 						/>
 						<Route
 							exact
@@ -42,6 +48,7 @@ function App() {
 							element={<ContactMe />}
 						/>
 					</Routes>
+					Test Test Testing
 					<Footer />
 				</main>
 			</BrowserRouter>
