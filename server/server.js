@@ -17,15 +17,16 @@ const server = new ApolloServer({
 	resolvers,
 });
 
+const serverRoot = process.env.SERVER_ROOT;
+const appRoot = process.env.APP_ROOT;
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/", routes);
 
 if (process.env.NODE_ENV === "production") {
 	app.use(
-		express.static(
-			"home/pbp66/jpperry.dev/software-portfolio/client/build/static"
-		)
+		express.static(path.join(serverRoot, appRoot, "client/build/static/"))
 	);
 	// app.use(
 	// 	express.static(
@@ -35,9 +36,9 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.get(process.env.URI_PATH || "/", (req, res) => {
-	res.type("html");
-	res.sendFile("software-portfolio/client/build/index.html", {
-		root: "/home/pbp66/jpperry.dev/",
+	//res.type("js");
+	res.sendFile(appRoot, "client/build/index.html", {
+		root: "/home/pbp66/",
 	});
 });
 
