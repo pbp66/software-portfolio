@@ -49,9 +49,7 @@ app.get(process.env.URI_PATH || "/", (req, res) => {
 	//res.sendFile(new URL("../client/build/index.html", dirname).pathname);
 	res.sendFile(
 		//new URL(require("url").pathToFileURL(process.env.HOME_PAGE).toString())
-		url
-			.pathToFileURL(path.resolve("../client/build/index.html"))
-			.toString(),
+		url.pathToFileURL(path.resolve("client/build/index.html")).toString(),
 		options
 	);
 });
