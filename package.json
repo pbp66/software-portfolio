@@ -7,7 +7,7 @@
 		"start": "npm run build && npm run quick-start",
 		"quick-start": "cd server && npm run start",
 		"develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
-		"install": "cd server && npm i && cd ../client && npm i",
+		"install": "cd server && npm i --save && cd ../client && npm i --save",
 		"build": "cd client && npm run build",
 		"setup": "npm run install && npm run build"
 	},

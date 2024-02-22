@@ -43,6 +43,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.get(process.env.URI_PATH || "/", (req, res) => {
+	console.log(req);
 	//res.sendFile(new URL("../client/build/index.html", dirname).pathname);
 	res.sendFile(
 		//new URL(require("url").pathToFileURL(process.env.HOME_PAGE).toString())
