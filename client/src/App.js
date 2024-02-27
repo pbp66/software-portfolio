@@ -8,6 +8,7 @@ import ContactMe from "../src/pages/contactMe";
 import Header from "../src/components/header.js";
 import Footer from "../src/components/footer.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./custom.css";
 
 function App() {
 	return (
