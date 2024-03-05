@@ -1,3 +1,47 @@
 body {
 	margin: 15px;
 }
+
+.form-div-flex {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	gap: 50px;
+}
+
+.form-item-flex {
+	padding: 5px;
+	margin: 5px;
+}
+
+.form-label {
+	text-align: right;
+	max-width: 250px;
+	flex-grow: 1;
+}
+
+.form-input {
+	text-align: left;
+	max-width: 400px;
+	flex-grow: 1;
+}
+
+#contact-me-form {
+	display: flex;
+	flex-flow: column;
+	flex-grow: 1;
+}
+
+#contact-reason {
+	/* max-width: fit-content; */
+	/* TODO: Shrink selection box to fit content, but keep the label aligned with the others */
+}
+
+#form-submit {
+	margin-top: 20px;
+	align-self: center;
+}
+
+#contact-me-intro {
+	text-align: center;
+}
