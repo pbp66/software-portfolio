@@ -7,6 +7,7 @@ import {
 } from "../../components";
 
 export default function ResumeDoc(props) {
+	// TODO: Make a process that stores the resume in the public/assets/resume folder until a 3rd party data storage solution is used.
 	return (
 		<>
 			<div>
@@ -14,7 +15,7 @@ export default function ResumeDoc(props) {
 					href="/assets/resume/PerryJames.pdf"
 					download="PerryJames.pdf"
 				>
-					Click Me to Download My Resume!
+					Click Here to Download My Resume!
 				</a>
 			</div>
 			<Summary></Summary>
