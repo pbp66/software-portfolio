@@ -10,7 +10,12 @@ export default function ResumeDoc(props) {
 	return (
 		<>
 			<div>
-				<a href="/">Click Me to Download My Resume!</a>
+				<a
+					href="/assets/resume/PerryJames.pdf"
+					download="PerryJames.pdf"
+				>
+					Click Me to Download My Resume!
+				</a>
 			</div>
 			<Summary></Summary>
 			<TechnicalSkills></TechnicalSkills>
