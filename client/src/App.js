@@ -7,6 +7,7 @@ import Vault from "../src/pages/vault";
 import ContactMe from "../src/pages/contactMe";
 import Header from "../src/components/header.js";
 import Footer from "../src/components/footer.js";
+import Resume from "./pages/resume/index.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./custom.css";
 
@@ -40,6 +41,10 @@ function App() {
 						<Route
 							path="/contactMe"
 							element={<ContactMe />}
+						/>
+						<Route
+							path="/resume"
+							element={<Resume />}
 						/>
 					</Routes>
 					<Footer />
