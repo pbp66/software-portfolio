@@ -24,6 +24,7 @@ export default function Navigation(props) {
 							<NavbarLink to="/blog">Blog</NavbarLink>
 							<NavbarLink to="/portfolio">Portfolio</NavbarLink>
 							<NavbarLink to="/contactMe">Contact Me</NavbarLink>
+							<NavbarLink to="/Resume">Resume</NavbarLink>
 							<NavbarLink to="/vault">Vault</NavbarLink>
 						</Nav>
 					</Navbar.Collapse>
