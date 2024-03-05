@@ -1,4 +1,6 @@
 import React from "react";
+import Education from "./resume/education";
+import Certificate from "./resume/certificate";
 
 export default function EducationCertifications(props) {
 	return (

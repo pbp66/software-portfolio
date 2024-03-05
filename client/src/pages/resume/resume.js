@@ -1,6 +1,5 @@
 import React from "react";
 import {
-	Heading,
 	Summary,
 	TechnicalSkills,
 	Experience,
