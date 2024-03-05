@@ -1,10 +1,22 @@
 import React from "react";
-import Required from "../../components/styles";
+import {
+	Heading,
+	Summary,
+	TechnicalSkills,
+	Experience,
+	EducationCertifications,
+} from "../../components";
 
 export default function ResumeDoc(props) {
 	return (
 		<>
-			<div>Resume</div>
+			<div>
+				<a href="/">Click Me to Download My Resume!</a>
+			</div>
+			<Summary></Summary>
+			<TechnicalSkills></TechnicalSkills>
+			<Experience></Experience>
+			<EducationCertifications></EducationCertifications>
 		</>
 	);
 }
